@@ -112,13 +112,20 @@
           # this includes LSPs
           lspsAndRuntimeDeps = {
             general = with pkgs; [
+			lua-language-server
             ];
           };
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
-            general = with pkgs.vimPlugins; [ ];
+            general = with pkgs.vimPlugins; [ 
+                mini-nvim
+                nvim-lspconfig
+                nvim-web-devicons
+                snacks-nvim
+                tokyonight-nvim
+            ];
           };
 
           # not loaded automatically at startup.
@@ -195,15 +202,6 @@
               general = true;
               gitPlugins = true;
               customPlugins = true;
-              example = {
-                youCan = "add more than just booleans";
-                toThisSet = [
-                  "and the contents of this categories set"
-                  "will be accessible to your lua with"
-                  "nixCats('path.to.value')"
-                  "see :help nixCats"
-                ];
-              };
             };
           };
       };
