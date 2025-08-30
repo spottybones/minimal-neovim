@@ -121,12 +121,12 @@
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
-            general = with pkgs.vimPlugins; [ 
-                mini-nvim
-                nvim-lspconfig
-                nvim-web-devicons
-                snacks-nvim
-                tokyonight-nvim
+            general = with pkgs.vimPlugins; [
+              mini-nvim
+              nvim-lspconfig
+              nvim-web-devicons
+              snacks-nvim
+              tokyonight-nvim
             ];
           };
 
