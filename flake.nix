@@ -124,7 +124,6 @@
             general = with pkgs.vimPlugins; [
               fidget-nvim
               mini-nvim
-              nvim-lspconfig
               nvim-web-devicons
               snacks-nvim
               tokyonight-nvim

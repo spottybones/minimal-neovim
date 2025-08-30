@@ -20,7 +20,6 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
     vim.pack.add({
         { src = "https://github.com/folke/tokyonight.nvim" },
         { src = "https://github.com/nvim-mini/mini.nvim" },
-        { src = "https://github.com/neovim/nvim-lspconfig" },
         { src = "https://github.com/folke/snacks.nvim" },
         { src = "https://github.com/nvim-tree/nvim-web-devicons" },
         { src = "https://github.com/j-hui/fidget.nvim" },
