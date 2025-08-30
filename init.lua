@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>h", Snacks.picker.help)
 vim.keymap.set("n", "<leader>g", function() Snacks.lazygit() end)
 
 -- set up Lua LSP
-vim.lsp.enable({ "lua_ls" })
+vim.lsp.enable({ "lua_ls", "nixd" })
 vim.keymap.set({ "n" }, "<leader>cf", vim.lsp.buf.format)
 
 -- colorscheme

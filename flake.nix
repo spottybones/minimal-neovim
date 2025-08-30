@@ -112,7 +112,9 @@
           # this includes LSPs
           lspsAndRuntimeDeps = {
             general = with pkgs; [
-			lua-language-server
+              lua-language-server
+              nixd
+              nixfmt-rfc-style
             ];
           };
 
