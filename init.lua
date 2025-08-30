@@ -23,6 +23,7 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
         { src = "https://github.com/neovim/nvim-lspconfig" },
         { src = "https://github.com/folke/snacks.nvim" },
         { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+        { src = "https://github.com/j-hui/fidget.nvim" },
     })
 end
 
@@ -36,6 +37,7 @@ require("mini.statusline").setup()
 require("mini.tabline").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
+require("fidget").setup({})
 
 -- keymaps for pickers
 vim.keymap.set("n", "<leader>f", Snacks.picker.smart)
