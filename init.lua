@@ -31,24 +31,12 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
     })
 end
 
-require("snacks").setup({
-    statuscolumn = { enabled = true },
-    picker = { enabled = true },
-    lazygit = { enabled = true },
-})
 require("mini.pick").setup()
 require("mini.statusline").setup()
 require("mini.tabline").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
 require("fidget").setup({})
-
--- keymaps for pickers
-vim.keymap.set("n", "<leader>f", Snacks.picker.smart)
-vim.keymap.set("n", "<leader>e", Snacks.picker.explorer)
-vim.keymap.set("n", "<leader>h", Snacks.picker.help)
-vim.keymap.set("n", "<leader>g", function() Snacks.lazygit() end)
-vim.keymap.set("n", "<leader>bd", function() Snacks.bufdelete() end)
 
 -- set up Lua LSP
 vim.lsp.enable({ "lua_ls", "nixd" })
