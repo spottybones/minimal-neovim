@@ -26,6 +26,8 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
         { src = "https://github.com/j-hui/fidget.nvim" },
         { src = "https://github.com/nvim-mini/mini.nvim" },
         { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+        { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+        { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
     })
 end
 
@@ -54,3 +56,10 @@ vim.keymap.set({ "n" }, "<leader>cf", vim.lsp.buf.format)
 
 -- colorscheme
 vim.cmd("colorscheme tokyonight-moon")
+
+-- set up Treesitter options
+---@diagnostic disable-next-line: missing-fields
+require("nvim-treesitter.configs").setup({
+    highlight = { enable = true },
+    indent = { enable = true },
+})

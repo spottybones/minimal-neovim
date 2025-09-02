@@ -124,6 +124,8 @@
             general = with pkgs.vimPlugins; [
               fidget-nvim
               mini-nvim
+              nvim-treesitter-textobjects
+              nvim-treesitter.withAllGrammars
               nvim-web-devicons
               snacks-nvim
               tokyonight-nvim
