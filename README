@@ -1,0 +1,6 @@
+# Minimal NVIM Configuration
+
+My "minimal" Neovim configuration, implemented with NixCats, but with
+a goal to work without Nix.
+
+This configuration requires Neovim >= 0.12.
