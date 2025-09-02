@@ -21,11 +21,11 @@ vim.keymap.set({ "i", "v" }, "jk", "<ESC>")
 -- Use vim.pack.add() to install plugins if not using NixCats
 if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
     vim.pack.add({
-        { src = "https://github.com/folke/tokyonight.nvim" },
-        { src = "https://github.com/nvim-mini/mini.nvim" },
         { src = "https://github.com/folke/snacks.nvim" },
-        { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+        { src = "https://github.com/folke/tokyonight.nvim" },
         { src = "https://github.com/j-hui/fidget.nvim" },
+        { src = "https://github.com/nvim-mini/mini.nvim" },
+        { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     })
 end
 
