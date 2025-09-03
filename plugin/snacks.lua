@@ -4,6 +4,7 @@ require("snacks").setup({
     statuscolumn = { enabled = true },
     picker = { enabled = true },
     lazygit = { enabled = true },
+    explorer = { enabled = true, replace_netrw = true, }
 })
 
 -- keymaps for pickers
