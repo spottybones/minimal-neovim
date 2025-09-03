@@ -41,6 +41,7 @@ require("fidget").setup({})
 -- set up Lua LSP
 vim.lsp.enable({ "lua_ls", "nixd" })
 vim.keymap.set({ "n" }, "<leader>cf", vim.lsp.buf.format)
+vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action)
 
 -- colorscheme
 vim.cmd("colorscheme tokyonight-moon")
