@@ -122,6 +122,7 @@
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
             general = with pkgs.vimPlugins; [
+              bufferline-nvim
               fidget-nvim
               mini-nvim
               nvim-treesitter-textobjects

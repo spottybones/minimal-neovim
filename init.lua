@@ -21,6 +21,7 @@ vim.keymap.set({ "i", "v" }, "jk", "<ESC>")
 -- Use vim.pack.add() to install plugins if not using NixCats
 if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
     vim.pack.add({
+        { src = "https://github.com/akinsho/bufferline.nvim" },
         { src = "https://github.com/folke/snacks.nvim" },
         { src = "https://github.com/folke/tokyonight.nvim" },
         { src = "https://github.com/j-hui/fidget.nvim" },
@@ -33,7 +34,6 @@ end
 
 require("mini.pick").setup()
 require("mini.statusline").setup()
-require("mini.tabline").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
 require("fidget").setup({})
