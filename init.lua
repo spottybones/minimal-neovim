@@ -15,7 +15,7 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>o", ":update<CR> :source<CR>")
 vim.keymap.set("n", "<leader>w", ":write<CR>")
-vim.keymap.set("n", "<leader>q", ":quit<CR>")
+vim.keymap.set("n", "<leader>q", ":qall<CR>")
 vim.keymap.set({ "i", "v" }, "jk", "<ESC>")
 
 -- Use vim.pack.add() to install plugins if not using NixCats
