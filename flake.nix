@@ -124,6 +124,7 @@
             general = with pkgs.vimPlugins; [
               bufferline-nvim
               fidget-nvim
+              lualine-nvim
               mini-nvim
               nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
