@@ -33,6 +33,7 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
     })
 end
 
+require("mini.basics").setup()
 require("mini.pick").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
