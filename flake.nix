@@ -131,10 +131,20 @@
               lualine-nvim
               mini-nvim
               nvim-treesitter-textobjects
-              nvim-treesitter.withAllGrammars
               nvim-web-devicons
               snacks-nvim
               tokyonight-nvim
+              (nvim-treesitter.withPlugins (p: [
+                p.lua
+                p.luadoc
+                p.luap
+                p.nix
+              ]))
+            ];
+            pydev = with pkgs.vimPlugins; [
+              (nvim-treesitter.withPlugins (p: [
+                p.python
+              ]))
             ];
           };
 
