@@ -22,3 +22,5 @@ vim.keymap.set("n", "<leader>u", Snacks.picker.buffers, { desc = "Pick Buffers" 
 vim.keymap.set("n", "<leader>k", Snacks.picker.keymaps, { desc = "Pick Keymaps" })
 vim.keymap.set("n", "<leader>g", function() Snacks.lazygit() end, { desc = "LazyGit" })
 vim.keymap.set("n", "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffer" })
+vim.keymap.set("n", "<leader>/", function() Snacks.terminal() end, { desc = "Open Terminal" })
+vim.keymap.set("n", "<leader>:", Snacks.picker.command_history, { desc = "Pick Command History" })
