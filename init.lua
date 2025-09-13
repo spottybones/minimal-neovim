@@ -45,6 +45,10 @@ require("fidget").setup({})
 
 -- set up Lua LSP
 vim.lsp.enable({ "lua_ls", "nixd" })
+if nixCats("pydev") then
+    -- if the pydev category is enabled, load python LSPs
+    vim.lsp.enable({ "basedpyright", "ruff" })
+end
 vim.keymap.set({ "n" }, "<leader>cf", vim.lsp.buf.format)
 vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action)
 

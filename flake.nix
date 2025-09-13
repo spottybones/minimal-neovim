@@ -116,6 +116,10 @@
               nixd
               nixfmt-rfc-style
             ];
+            pydev = with pkgs; [
+              basedpyright
+              ruff
+            ];
           };
 
           # This is for plugins that will load at startup without using packadd:
@@ -206,6 +210,29 @@
             # (and other information to pass to lua)
             categories = {
               general = true;
+              gitPlugins = true;
+              customPlugins = true;
+            };
+          };
+        nvim_pydev =
+          { pkgs, name, ... }:
+          {
+            # they contain a settings set defined above
+            # see :help nixCats.flake.outputs.settings
+            settings = {
+              suffix-path = true;
+              suffix-LD = true;
+              wrapRc = true;
+              # IMPORTANT:
+              # your alias may not conflict with your other packages.
+              aliases = [ "vim" ];
+              neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+            };
+            # and a set of categories that you want
+            # (and other information to pass to lua)
+            categories = {
+              general = true;
+              pydev = true;
               gitPlugins = true;
               customPlugins = true;
             };
