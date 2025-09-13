@@ -215,6 +215,11 @@
               # your alias may not conflict with your other packages.
               aliases = [ "vim" ];
               neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+              # host providers
+              hosts.node.enable = false;
+              hosts.perl.enable = false;
+              hosts.python3.enable = true;
+              hosts.ruby.enable = false;
             };
             # and a set of categories that you want
             # (and other information to pass to lua)
@@ -237,6 +242,11 @@
               # your alias may not conflict with your other packages.
               aliases = [ "vim" ];
               neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+              # host providers
+              hosts.node.enable = false;
+              hosts.perl.enable = false;
+              hosts.python3.enable = true;
+              hosts.ruby.enable = false;
             };
             # and a set of categories that you want
             # (and other information to pass to lua)
