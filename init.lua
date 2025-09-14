@@ -24,6 +24,7 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
         { src = "https://github.com/akinsho/bufferline.nvim" },
         { src = "https://github.com/folke/snacks.nvim" },
         { src = "https://github.com/folke/tokyonight.nvim" },
+        { src = "https://github.com/folke/which-key.nvim/" },
         { src = "https://github.com/j-hui/fidget.nvim" },
         { src = "https://github.com/nvim-lualine/lualine.nvim" },
         { src = "https://github.com/nvim-mini/mini.nvim" },
@@ -49,8 +50,8 @@ if nixCats("pydev") then
     -- if the pydev category is enabled, load python LSPs
     vim.lsp.enable({ "basedpyright", "ruff" })
 end
-vim.keymap.set({ "n" }, "<leader>cf", vim.lsp.buf.format)
-vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action)
+vim.keymap.set({ "n" }, "<leader>cf", vim.lsp.buf.format, { desc = "Code Format" })
+vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 
 -- colorscheme
 vim.cmd("colorscheme tokyonight-moon")
@@ -64,3 +65,13 @@ require("nvim-treesitter.configs").setup({
 
 -- set up lualine
 require("lualine").setup({})
+
+-- set up which-key
+local wk = require("which-key")
+wk.setup({
+    preset = "helix"
+})
+wk.add({
+    { "<leader>b", group = "buffer" },
+    { "<leader>c", group = "code" }
+})

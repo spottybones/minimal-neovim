@@ -134,6 +134,7 @@
               nvim-web-devicons
               snacks-nvim
               tokyonight-nvim
+              which-key-nvim
               (nvim-treesitter.withPlugins (p: [
                 p.lua
                 p.luadoc
