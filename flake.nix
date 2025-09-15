@@ -115,6 +115,7 @@
               lua-language-server
               nixd
               nixfmt-rfc-style
+              stylua
             ];
             pydev = with pkgs; [
               basedpyright
