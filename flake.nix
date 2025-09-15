@@ -126,6 +126,7 @@
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
             general = with pkgs.vimPlugins; [
+              conform-nvim
               bufferline-nvim
               fidget-nvim
               lualine-nvim

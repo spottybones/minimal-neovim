@@ -31,6 +31,7 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
         { src = "https://github.com/nvim-tree/nvim-web-devicons" },
         { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
         { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
+        { src = "https://github.com/stevearc/conform.nvim" },
     })
 end
 
