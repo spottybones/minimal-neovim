@@ -38,7 +38,7 @@ end
 require("mini.basics").setup({
     mappings = {
         windows = true,
-    }
+    },
 })
 require("mini.pick").setup()
 require("mini.pairs").setup()
@@ -70,9 +70,9 @@ require("lualine").setup({})
 -- set up which-key
 local wk = require("which-key")
 wk.setup({
-    preset = "helix"
+    preset = "helix",
 })
 wk.add({
     { "<leader>b", group = "buffer" },
-    { "<leader>c", group = "code" }
+    { "<leader>c", group = "code" },
 })

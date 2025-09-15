@@ -1,6 +1,6 @@
 require("conform").setup({
     formatters_by_ft = {
-        lua = { "stylua" }
+        lua = { "stylua" },
     },
     format_on_save = {
         -- These options will be passed to conform.format()
@@ -8,6 +8,6 @@ require("conform").setup({
         lsp_format = "fallback",
     },
     default_format_opts = {
-        lsp_format = "fallback"
-    }
+        lsp_format = "fallback",
+    },
 })

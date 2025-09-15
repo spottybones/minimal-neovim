@@ -18,5 +18,5 @@ require("bufferline").setup({
                 filetype = "snacks_layout_box",
             },
         },
-    }
+    },
 })
