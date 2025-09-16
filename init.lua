@@ -52,7 +52,7 @@ if nixCats("pydev") then
     -- if the pydev category is enabled, load python LSPs
     vim.lsp.enable({ "basedpyright", "ruff" })
 end
-vim.keymap.set({ "n" }, "<leader>cf", vim.lsp.buf.format, { desc = "Code Format" })
+vim.keymap.set({ "n" }, "<leader>cf", require("conform").format, { desc = "Code Format" })
 vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 
 -- colorscheme
