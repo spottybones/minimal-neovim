@@ -113,6 +113,8 @@
           lspsAndRuntimeDeps = {
             general = with pkgs; [
               bash-language-server
+              just
+              just-lsp
               lua-language-server
               nixd
               nixfmt-rfc-style
@@ -145,6 +147,7 @@
               tokyonight-nvim
               which-key-nvim
               (nvim-treesitter.withPlugins (p: [
+                p.just
                 p.lua
                 p.luadoc
                 p.luap

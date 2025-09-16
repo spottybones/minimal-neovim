@@ -34,6 +34,7 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
         { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
         { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
         { src = "https://github.com/stevearc/conform.nvim" },
+        { src = "https://github.com/terror/just-lsp" },
     })
 end
 
@@ -56,6 +57,9 @@ end
 
 -- set up bashls LSP
 vim.lsp.enable("bashls")
+
+-- set up just-lsp
+vim.lsp.enable("just")
 
 vim.keymap.set({ "n" }, "<leader>cf", require("conform").format, { desc = "Code Format" })
 vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
