@@ -7,6 +7,10 @@ my_formatters_by_ft.lua = { "stylua" }
 my_formatters_by_ft.nix = { lsp_format = "fallback" }
 my_formatters_by_ft._ = { "trim_whitespace" }
 
+if nixCats("pydev") then
+    my_formatters_by_ft.python = { "ruff_format", "ruff_organize_imports" }
+end
+
 if nixCats("sql") then
     my_formatters_by_ft.sql = { "sqlfluff" }
     my_formatters.sqlfluff = { "format", "-" }
