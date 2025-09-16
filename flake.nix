@@ -112,9 +112,12 @@
           # this includes LSPs
           lspsAndRuntimeDeps = {
             general = with pkgs; [
+              bash-language-server
               lua-language-server
               nixd
               nixfmt-rfc-style
+              shellcheck
+              shfmt
               stylua
             ];
             pydev = with pkgs; [

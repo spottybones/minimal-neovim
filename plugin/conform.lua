@@ -6,6 +6,8 @@ local my_formatters = {}
 my_formatters_by_ft.lua = { "stylua" }
 my_formatters_by_ft.nix = { lsp_format = "fallback" }
 my_formatters_by_ft._ = { "trim_whitespace" }
+my_formatters_by_ft.sh = { "shellcheck", "shfmt" }
+my_formatters_by_ft.bash = { "shellcheck", "shfmt" }
 
 if nixCats("pydev") then
     my_formatters_by_ft.python = { "ruff_format", "ruff_organize_imports" }

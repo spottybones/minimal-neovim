@@ -22,6 +22,7 @@ vim.keymap.set({ "i", "v" }, "jk", "<ESC>")
 if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
     vim.pack.add({
         { src = "https://github.com/akinsho/bufferline.nvim" },
+        { src = "https://github.com/bash-lsp/bash-language-server" },
         { src = "https://github.com/folke/snacks.nvim" },
         { src = "https://github.com/folke/tokyonight.nvim" },
         { src = "https://github.com/folke/which-key.nvim/" },
@@ -52,6 +53,10 @@ if nixCats("pydev") then
     -- if the pydev category is enabled, load python LSPs
     vim.lsp.enable({ "basedpyright", "ruff" })
 end
+
+-- set up bashls LSP
+vim.lsp.enable("bashls")
+
 vim.keymap.set({ "n" }, "<leader>cf", require("conform").format, { desc = "Code Format" })
 vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 

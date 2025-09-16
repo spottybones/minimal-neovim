@@ -1,5 +1,8 @@
 local lint = require("lint")
 
+lint.linters_by_ft.sh = { "shellcheck" }
+lint.linters_by_ft.bash = { "shellcheck" }
+
 if nixCats("pydev") then
     lint.linters_by_ft.python = { "ruff" }
 end
