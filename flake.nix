@@ -239,34 +239,6 @@
               sql = true;
             };
           };
-        nvim_pydev =
-          { pkgs, name, ... }:
-          {
-            # they contain a settings set defined above
-            # see :help nixCats.flake.outputs.settings
-            settings = {
-              suffix-path = true;
-              suffix-LD = true;
-              wrapRc = true;
-              # IMPORTANT:
-              # your alias may not conflict with your other packages.
-              aliases = [ "vim" ];
-              neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
-              # host providers
-              hosts.node.enable = false;
-              hosts.perl.enable = false;
-              hosts.python3.enable = true;
-              hosts.ruby.enable = false;
-            };
-            # and a set of categories that you want
-            # (and other information to pass to lua)
-            categories = {
-              general = true;
-              pydev = true;
-              gitPlugins = true;
-              customPlugins = true;
-            };
-          };
       };
       # In this section, the main thing you will need to do is change the default package name
       # to the name of the packageDefinitions entry you wish to use as the default.
