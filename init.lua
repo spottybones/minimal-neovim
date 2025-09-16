@@ -26,6 +26,7 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
         { src = "https://github.com/folke/tokyonight.nvim" },
         { src = "https://github.com/folke/which-key.nvim/" },
         { src = "https://github.com/j-hui/fidget.nvim" },
+        { src = "https://github.com/mfussenegger/nvim-lint" },
         { src = "https://github.com/nvim-lualine/lualine.nvim" },
         { src = "https://github.com/nvim-mini/mini.nvim" },
         { src = "https://github.com/nvim-tree/nvim-web-devicons" },

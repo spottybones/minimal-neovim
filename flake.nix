@@ -121,17 +121,21 @@
               basedpyright
               ruff
             ];
+            sql = with pkgs; [
+              sqlfluff
+            ];
           };
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
             general = with pkgs.vimPlugins; [
-              conform-nvim
               bufferline-nvim
+              conform-nvim
               fidget-nvim
               lualine-nvim
               mini-nvim
+              nvim-lint
               nvim-treesitter-textobjects
               nvim-web-devicons
               snacks-nvim
@@ -142,6 +146,7 @@
                 p.luadoc
                 p.luap
                 p.nix
+                p.sql
               ]))
             ];
             pydev = with pkgs.vimPlugins; [
@@ -230,6 +235,8 @@
               general = true;
               gitPlugins = true;
               customPlugins = true;
+              pydev = true;
+              sql = true;
             };
           };
         nvim_pydev =
