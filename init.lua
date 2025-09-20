@@ -33,6 +33,7 @@ if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
         { src = "https://github.com/nvim-tree/nvim-web-devicons" },
         { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
         { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
+        { src = "https://github.com/p00f/clangd_extensions.nvim" },
         { src = "https://github.com/stevearc/conform.nvim" },
         { src = "https://github.com/terror/just-lsp" },
     })
@@ -60,6 +61,9 @@ vim.lsp.enable("bashls")
 
 -- set up just-lsp
 vim.lsp.enable("just")
+
+-- set up clangd LSP
+vim.lsp.enable("clangd")
 
 vim.keymap.set({ "n" }, "<leader>cf", require("conform").format, { desc = "Code Format" })
 vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })

@@ -160,6 +160,12 @@
                 p.python
               ]))
             ];
+            clangd = with pkgs.vimPlugins; [
+              clangd_extensions-nvim
+              (nvim-treesitter.withPlugins (p: [
+                p.cpp
+              ]))
+            ];
           };
 
           # not loaded automatically at startup.
@@ -243,6 +249,7 @@
               customPlugins = true;
               pydev = true;
               sql = true;
+              clangd = true;
             };
           };
       };
