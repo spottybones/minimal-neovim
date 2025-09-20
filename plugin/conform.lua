@@ -19,6 +19,10 @@ if nixCats("sql") then
     my_formatters.sqlfluff = { "format", "-" }
 end
 
+if nixCats("clangd") then
+    my_formatters_by_ft.cpp = { "clang-format" }
+end
+
 conform.setup({
     formatters_by_ft = my_formatters_by_ft,
     formatters = my_formatters,
