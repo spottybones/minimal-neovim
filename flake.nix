@@ -129,6 +129,9 @@
             sql = with pkgs; [
               sqlfluff
             ];
+            clangd = with pkgs; [
+              clang-tools
+            ];
           };
 
           # This is for plugins that will load at startup without using packadd:
