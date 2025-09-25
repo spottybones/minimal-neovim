@@ -1,4 +1,4 @@
--- ---@brief
+---@brief
 ---
 --- https://github.com/nix-community/nixd
 ---
