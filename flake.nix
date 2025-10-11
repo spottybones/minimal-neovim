@@ -122,10 +122,13 @@
               shfmt
               stylua
             ];
-            pydev = with pkgs; [
-              basedpyright
-              ruff
-            ];
+            pydev =
+              with pkgs;
+              [
+                basedpyright
+                ruff
+              ]
+              ++ (if "${system}" == "aarch-darwin" then [ pkgs.clang_20 ] else [ ]);
             sql = with pkgs; [
               sqlfluff
             ];
