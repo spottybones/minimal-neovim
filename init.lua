@@ -47,6 +47,7 @@ require("mini.basics").setup({
 require("mini.pick").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
+require("mini.completion").setup({})
 require("fidget").setup({})
 
 -- set up Lua LSP
