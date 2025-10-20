@@ -24,9 +24,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-    };
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    # };
 
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
@@ -141,17 +141,12 @@
           startupPlugins = {
             gitPlugins = with pkgs.neovimPlugins; [ ];
             general = with pkgs.vimPlugins; [
-              bufferline-nvim
               conform-nvim
-              fidget-nvim
-              lualine-nvim
               mini-nvim
               nvim-lint
               nvim-treesitter-textobjects
               nvim-web-devicons
-              snacks-nvim
               tokyonight-nvim
-              which-key-nvim
               (nvim-treesitter.withPlugins (p: [
                 p.just
                 p.lua
@@ -194,7 +189,7 @@
           # at RUN TIME for plugins. Will be available to path within neovim terminal
           environmentVariables = {
             general = {
-              NVIM_APPNAME = "nvim12-minimal";
+              NVIM_APPNAME = "nvim-minimax";
             };
           };
 
@@ -240,7 +235,7 @@
               # IMPORTANT:
               # your alias may not conflict with your other packages.
               aliases = [ "vim" ];
-              neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+              neovim-unwrapped = inputs.nixpkgs.packages.${pkgs.system}.neovim;
               # host providers
               hosts.node.enable = false;
               hosts.perl.enable = false;
