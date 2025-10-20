@@ -93,9 +93,10 @@ now_if_args(function()
   -- the rules provided by 'nvim-lspconfig'.
   -- Use `:h vim.lsp.config()` or 'ftplugin/lsp/' directory to configure servers.
   -- Uncomment and tweak the following `vim.lsp.enable()` call to enable servers.
-  -- vim.lsp.enable({
-  --   -- For example, if `lua-language-server` is installed, use `'lua_ls'` entry
-  -- })
+  vim.lsp.enable({
+    -- For example, if `lua-language-server` is installed, use `'lua_ls'` entry
+    "lua_ls",
+  })
 end)
 
 -- Formatting =================================================================
@@ -116,7 +117,11 @@ later(function()
   require('conform').setup({
     -- Map of filetype to formatters
     -- Make sure that necessary CLI tool is available
-    -- formatters_by_ft = { lua = { 'stylua' } },
+    formatters_by_ft = { lua = { "stylua" } },
+    format_on_save = {
+      timeout_ms = 500,
+      lsp_format = "if_no_formatters",
+    },
   })
 end)
 
