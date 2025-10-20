@@ -38,6 +38,9 @@
     # for specific tags, branches and commits, see:
     # https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples
 
+    # pre-commit-hooks
+    pre-commit-hooks.url = "github:cachix/git-hooks.nix";
+    pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # see :help nixCats.flake.outputs
@@ -235,7 +238,7 @@
               # IMPORTANT:
               # your alias may not conflict with your other packages.
               aliases = [ "vim" ];
-              neovim-unwrapped = inputs.nixpkgs.packages.${pkgs.system}.neovim;
+              # neovim-unwrapped = inputs.nixpkgs.packages.${pkgs.system}.neovim;
               # host providers
               hosts.node.enable = false;
               hosts.perl.enable = false;
@@ -291,10 +294,25 @@
             name = defaultPackageName;
             packages = [ defaultPackage ];
             inputsFrom = [ ];
-            shellHook = '''';
+            # shellHook = '''';
+            inherit (self.checks.${system}.pre-commit-check) shellHook;
+            buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
           };
         };
 
+        checks = {
+          pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+            src = ./.;
+            hooks = {
+              check-added-large-files.enable = true;
+              end-of-file-fixer.enable = true;
+              flake-checker.enable = true;
+              nixfmt-rfc-style.enable = true;
+              stylua.enable = true;
+              trim-trailing-whitespace.enable = true;
+            };
+          };
+        };
       }
     )
     // (
