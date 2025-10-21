@@ -9,7 +9,15 @@
 -- Use this file to install and configure other such plugins.
 
 -- Make concise helpers for installing/adding plugins in two stages
-local add, later = MiniDeps.add, MiniDeps.later
+local add, later
+if not vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] then
+  add = MiniDeps.add
+  later = MiniDeps.later
+else
+  add = function(_noop) end
+  later = function(_noop) end
+end
+
 local now_if_args = _G.Config.now_if_args
 
 -- Tree-sitter ================================================================

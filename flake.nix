@@ -147,6 +147,7 @@
               conform-nvim
               mini-nvim
               nvim-lint
+              nvim-lspconfig
               nvim-treesitter-textobjects
               nvim-web-devicons
               tokyonight-nvim
