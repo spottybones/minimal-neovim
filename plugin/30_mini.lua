@@ -195,7 +195,10 @@ later(function()
       -- For more complicated textobjects that require structural awareness,
       -- use tree-sitter. This example makes `aF`/`iF` mean around/inside function
       -- definition (not call). See `:h MiniAi.gen_spec.treesitter()` for details.
-      F = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
+      F = ai.gen_spec.treesitter({
+        a = '@function.outer',
+        i = '@function.inner',
+      }),
     },
 
     -- 'mini.ai' by default mostly mimics built-in search behavior: first try
@@ -510,7 +513,11 @@ end)
 --
 -- See also:
 -- - `:h MiniIndentscope.gen_animation` - available animation rules
-later(function() require('mini.indentscope').setup() end)
+later(function()
+  require('mini.indentscope').setup({
+    symbol = '│',
+  })
+end)
 
 -- Jump to next/previous single character. It implements "smarter `fFtT` keys"
 -- (see `:h f`) that work across multiple lines, start "jumping mode", and

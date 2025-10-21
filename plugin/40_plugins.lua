@@ -34,7 +34,9 @@ now_if_args(function()
     -- Use `main` branch since `master` branch is frozen, yet still default
     checkout = 'main',
     -- Update tree-sitter parser after plugin is updated
-    hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+    hooks = {
+      post_checkout = function() vim.cmd('TSUpdate') end,
+    },
   })
   add({
     source = 'nvim-treesitter/nvim-treesitter-textobjects',
@@ -95,7 +97,7 @@ now_if_args(function()
   -- Uncomment and tweak the following `vim.lsp.enable()` call to enable servers.
   vim.lsp.enable({
     -- For example, if `lua-language-server` is installed, use `'lua_ls'` entry
-    "lua_ls",
+    'lua_ls',
   })
 end)
 
@@ -117,10 +119,10 @@ later(function()
   require('conform').setup({
     -- Map of filetype to formatters
     -- Make sure that necessary CLI tool is available
-    formatters_by_ft = { lua = { "stylua" } },
+    formatters_by_ft = { lua = { 'stylua' } },
     format_on_save = {
       timeout_ms = 500,
-      lsp_format = "if_no_formatters",
+      lsp_format = 'if_no_formatters',
     },
   })
 end)
